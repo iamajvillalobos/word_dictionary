@@ -1,18 +1,12 @@
 defmodule WordDictionary do
-  @moduledoc """
-  Documentation for WordDictionary.
-  """
+  def words do
+    "assets/words.txt"
+    |> File.read!
+    |> String.split("\n")
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> WordDictionary.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def random do
+    words()
+    |> Enum.random
   end
 end
